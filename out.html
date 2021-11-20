@@ -14,9 +14,9 @@
             let year=date.getFullYear();
             let month=date.getMonth()+1;
             let day= date.getDate();
-            if(month>=10) let nowDate=year+"-"+month+"-"+day;
-            else let nowDate=year+"-0"+month+"-"+day;
-        
+            var nowDate;
+            if(month<10) nowDate=year+"-0"+month+"-"+day;
+            else  nowDate=year+"-"+month+"-"+day;
             $(".id").append(request("id"));
             $(".name").append("("+decodeURI(request("name"))+(")"));
             $("#time").append("打卡时间："+nowDate+" 10:21")
